@@ -1,9 +1,9 @@
 # My Portfolio
 
-Ye mera personal portfolio website hai, jo maine HTML, CSS aur JavaScript use karke banaya hai.
+This is my personal portfolio website, built using HTML, CSS, and JavaScript.
 
 ## 🔗 Live Demo
-[Portfolio dekhne ke liye yahan click karo](https://tumhara-username.github.io/portfolio/)
+[Click here to view the portfolio](https://your-username.github.io/portfolio/)
 
 ## 🛠️ Tech Stack
 - HTML5
@@ -17,13 +17,13 @@ Ye mera personal portfolio website hai, jo maine HTML, CSS aur JavaScript use ka
 - Contact details
 
 ## 🚀 How to Run Locally
-1. Repo clone karo:
+1. Clone the repository:
 ```bash
-   git clone https://github.com/tumhara-username/portfolio.git
+   git clone https://github.com/your-username/portfolio.git
 ```
-2. `index.html` file ko browser mein open karo
+2. Open `index.html` in your browser
 
 ## 📬 Contact
-- Email: tumhara-email@example.com
-- LinkedIn: [tumhara-linkedin-link]
-- GitHub: [@tumhara-username](https://github.com/tumhara-username)
+- Email: your-kshitijji001@gmail.com
+- LinkedIn: linkedin.com/in/kshitijtiwari1
+- GitHub: [hanuman-kshitijTiwari](https://github.com/hanuman-kshitijTiwari)
