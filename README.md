@@ -3,7 +3,7 @@
 This is my personal portfolio website, built using HTML, CSS, and JavaScript.
 
 ## 🔗 Live Demo
-[Click here to view the portfolio](https://your-username.github.io/portfolio/)
+[Click here to view the portfolio](https://hanuman-kshitijtiwari.github.io/my_portfolio/)
 
 ## 🛠️ Tech Stack
 - HTML5
