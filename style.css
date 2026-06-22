@@ -1677,16 +1677,35 @@ footer {
 	}
 
 	.skill-stack {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
 	}
 
 	.skill-card {
+		width: 100%;
+		max-width: 100%;
+		min-width: 0;
 		padding: 0.9rem;
+	}
+
+	.skill-card__top {
+		flex-direction: column;
+		align-items: stretch;
 	}
 
 	.skill-card__meta {
 		align-items: flex-start;
+	}
+
+	.skill-card__pill-row {
+		justify-content: flex-start;
+		max-width: 100%;
+		width: 100%;
+	}
+
+	.skill-card__pill {
+		white-space: normal;
 	}
 
 	.skill-card__icon {
