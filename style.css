@@ -657,6 +657,28 @@ nav {
 	.portfolio-shell {
 		padding: 0 1rem;
 	}
+.skill-card__top {
+    flex-direction: column;
+  }
+
+  .skill-card__pill-row {
+    justify-content: flex-start;
+    max-width: 100%;
+  }
+
+  .skill-card__points--3,
+  .skill-card__points--4 {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-card {
+    width: 100% !important;
+    min-width: 100% !important;
+  }
+
+  .skill-stack {
+    gap: 32px;
+  }
 
 	.skill-card {
 		padding: 0.9rem;
