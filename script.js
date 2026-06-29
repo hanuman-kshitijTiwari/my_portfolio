@@ -3,6 +3,46 @@ const roles = ['MERN Stack Developer_','Full-Stack Engineer_','DSA Problem Solve
 let ri=0, ci=0, roleDeleting=false;
 const roleEl = document.getElementById('typed-role');
 
+const preloader = document.getElementById('page-preloader');
+const progressBar = document.querySelector('.scroll-progress');
+const backToTop = document.querySelector('.back-to-top');
+const cursorDot = document.querySelector('.cursor-dot');
+const cursorRing = document.querySelector('.cursor-ring');
+const isTouch = window.matchMedia('(pointer: coarse), (hover: none)').matches || window.innerWidth < 768;
+
+if (isTouch) {
+  document.body.classList.add('is-touch');
+}
+
+window.addEventListener('load', () => {
+  preloader?.classList.add('hidden');
+});
+
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const height = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = height > 0 ? (scrollTop / height) * 100 : 0;
+  if (progressBar) progressBar.style.width = `${progress}%`;
+  backToTop?.classList.toggle('visible', scrollTop > 400);
+});
+
+backToTop?.addEventListener('click', (e) => {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+if (!isTouch) {
+  window.addEventListener('mousemove', (e) => {
+    cursorDot.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+    cursorRing.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+  });
+
+  document.querySelectorAll('a, button, .skill-card, .project-card, .cert-card, .metric-card, .ach-card, .contact-btn').forEach((el) => {
+    el.addEventListener('mouseenter', () => cursorRing.classList.add('is-hovered'));
+    el.addEventListener('mouseleave', () => cursorRing.classList.remove('is-hovered'));
+  });
+}
+
 function typeRole(){
   const cur = roles[ri];
   if(!roleDeleting){
@@ -36,6 +76,49 @@ function typeLogo(){
 }
 typeLogo();
 
+
+document.querySelectorAll('.skill-card').forEach((card, index) => {
+  card.style.setProperty('--pill-index', index);
+
+  if (!isTouch) {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const rotateY = ((x / rect.width) - 0.5) * 10;
+      const rotateX = ((0.5 - (y / rect.height))) * 8;
+      card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
+  }
+});
+
+const metricCards = document.querySelectorAll('.metric-card, .ach-card');
+metricCards.forEach((card) => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        card.classList.add('is-visible');
+        observer.disconnect();
+      }
+    });
+  }, { threshold: 0.2 });
+  observer.observe(card);
+});
+
+const projectCards = document.querySelectorAll('.project-card');
+projectCards.forEach((card, index) => {
+  card.querySelectorAll('.card-pill').forEach((pill, pillIndex) => {
+    pill.style.setProperty('--pill-index', pillIndex);
+  });
+  card.style.setProperty('--pill-index', index);
+});
+
+const educationCard = document.querySelector('.edu-card');
+educationCard?.classList.add('is-visible');
 
 const skillStack = document.querySelector('.skill-stack');
 
@@ -88,6 +171,30 @@ if (skillStack) {
   updateSkillConnectors();
   window.addEventListener('resize', updateSkillConnectors);
 }
+
+document.querySelectorAll('.skill-card').forEach((card) => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        card.classList.add('is-visible');
+        observer.disconnect();
+      }
+    });
+  }, { threshold: 0.15 });
+  observer.observe(card);
+});
+
+const statValues = document.querySelectorAll('.metric-value, .ach-stat');
+const statObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('count-finished');
+      statObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.7 });
+
+statValues.forEach((value) => statObserver.observe(value));
 
 console.log("Script loaded successfully.");
 

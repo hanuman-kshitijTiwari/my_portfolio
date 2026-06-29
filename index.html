@@ -12,8 +12,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
+<div id="page-preloader" class="preloader" aria-hidden="true">
+  <div class="preloader-core"></div>
+</div>
+<div class="scroll-progress" aria-hidden="true"></div>
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
 
 <nav>
   <div class="nav-content">
@@ -30,21 +37,27 @@
 
 <!-- HERO -->
 <div class="hero">
+  <div class="hero-bg-blobs" aria-hidden="true">
+    <span class="blob blob-1"></span>
+    <span class="blob blob-2"></span>
+    <span class="blob blob-3"></span>
+  </div>
   <div class="hero-left">
-    <div class="hero-badge"><span class="dot-pulse"></span> Open to Internships</div>
+    <div class="hero-badge" data-aos="fade-down" data-aos-delay="0"><span class="dot-pulse"></span> Open to Internships</div>
     <div class="hero-name">
-      <div class="first">KSHITIJ</div>
-      <div class="last">Tiwari</div>
+      <div class="hero-line-accent"></div>
+      <div class="first" data-aos="fade-up" data-aos-delay="100">Hi, I'm <span class="name-highlight">Kshitij</span></div>
+      <div class="last" data-aos="fade-up" data-aos-delay="250">Tiwari</div>
     </div>
-    <div class="hero-role" id="typed-role">MERN Stack Developer_</div>
-    <div class="hero-desc">
+    <div class="hero-role" id="typed-role" data-aos="fade-up" data-aos-delay="400">MERN Stack Developer_</div>
+    <div class="hero-desc" data-aos="fade-up" data-aos-delay="500">
        <div class="highlight">B.Tech CSE-AIML(std) · MERN Stack · AWS Certified</div>
         <p></p>
         I design and ship full-stack products — from clean, 
         responsive UIs to secure REST APIs and cloud-native 
         deployments. Driven by performance, scalability & clean code.    </p>
         </div>
-    <div class="btn-row">
+    <div class="btn-row" data-aos="fade-up" data-aos-delay="600">
       <a href="#projects" class="btn btn-primary">View Projects</a>
       <a href="mailto:kshitijji001@gmail.com" class="btn btn-ghost">Hire Me</a>
     </div>
@@ -65,7 +78,7 @@
       <svg class="skill-connector skill-connector--right" viewBox="0 0 40 100" preserveAspectRatio="none" aria-hidden="true">
         <path class="skill-connector__path" d=""></path>
       </svg>
-      <article class="skill-card frontend-card">
+      <article class="skill-card frontend-card" data-aos="fade-right" data-aos-delay="0">
         <div class="skill-card__shine"></div>
         <div class="skill-card__corner"></div>
         <div class="skill-card__top">
@@ -104,7 +117,7 @@
         </div>
       </article>
 
-      <article class="skill-card backend-card">
+      <article class="skill-card backend-card" data-aos="fade-right" data-aos-delay="100">
         <div class="skill-card__shine"></div>
         <div class="skill-card__corner"></div>
         <div class="skill-card__top">
@@ -142,7 +155,7 @@
         </div>
       </article>
 
-      <article class="skill-card cloud-card">
+      <article class="skill-card cloud-card" data-aos="fade-right" data-aos-delay="200">
         <div class="skill-card__shine"></div>
         <div class="skill-card__corner"></div>
         <div class="skill-card__top">
@@ -179,7 +192,7 @@
         </div>
       </article>
 
-      <article class="skill-card dsa-card">
+      <article class="skill-card dsa-card" data-aos="fade-right" data-aos-delay="0">
         <div class="skill-card__shine"></div>
         <div class="skill-card__corner"></div>
         <div class="skill-card__top">
@@ -231,7 +244,7 @@
         </div>
       </article>
 
-      <article class="skill-card ai-card">
+      <article class="skill-card ai-card" data-aos="fade-right" data-aos-delay="100">
         <div class="skill-card__shine"></div>
         <div class="skill-card__corner"></div>
         <div class="skill-card__top">
@@ -363,7 +376,7 @@
   <h2 class="section-title">PROJECTS</h2>
   <div class="projects-grid">
 
-    <div class="project-card">
+    <div class="project-card" data-aos="fade-up" data-aos-delay="0">
       <div class="card-bar" style="background:linear-gradient(90deg,#f97316,#f59e0b)"></div>
       <div class="card-body">
         <div class="card-pills">
@@ -383,7 +396,7 @@
       </div>
     </div>
 
-    <div class="project-card">
+    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
       <div class="card-bar" style="background:linear-gradient(90deg,#22d3ee,#38bdf8)"></div>
       <div class="card-body">
         <div class="card-pills">
@@ -401,7 +414,7 @@
       </div>
     </div>
 
-    <div class="project-card">
+    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
       <div class="card-bar" style="background:linear-gradient(90deg,#a78bfa,#6366f1)"></div>
       <div class="card-body">
         <div class="card-pills">
@@ -420,7 +433,7 @@
       </div>
     </div>
 
-    <div class="project-card">
+    <div class="project-card" data-aos="fade-up" data-aos-delay="300">
       <div class="card-bar" style="background:linear-gradient(90deg,#38bdf8,#84cc16)"></div>
       <div class="card-body">
         <div class="card-pills">
@@ -454,7 +467,7 @@
       <path d="M 0 60 C 150 60, 180 20, 300 60 S 450 100, 600 60 S 750 20, 900 60 S 1050 100, 1200 60" />
     </svg>
     <div class="certs-grid">
-      <div class="cert-card cert-card--aws">
+      <div class="cert-card cert-card--aws" data-aos="fade-up" data-aos-delay="0">
         <div class="cert-icon cert-icon--aws">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS logo">
         </div>
@@ -464,7 +477,7 @@
           <div class="cert-by">Amazon Web Services</div>
         </div>
       </div>
-      <div class="cert-card cert-card--python">
+      <div class="cert-card cert-card--python" data-aos="fade-up" data-aos-delay="100">
         <div class="cert-icon cert-icon--python">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python logo">
         </div>
@@ -474,7 +487,7 @@
           <div class="cert-by">IBM</div>
         </div>
       </div>
-      <div class="cert-card cert-card--js">
+      <div class="cert-card cert-card--js" data-aos="fade-up" data-aos-delay="200">
         <div class="cert-icon cert-icon--js">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript logo">
         </div>
@@ -484,7 +497,7 @@
           <div class="cert-by">Etnotech</div>
         </div>
       </div>
-      <div class="cert-card cert-card--html">
+      <div class="cert-card cert-card--html" data-aos="fade-up" data-aos-delay="300">
         <div class="cert-icon cert-icon--html">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5 logo">
         </div>
@@ -504,7 +517,7 @@
   <p class="section-tag ach-tag">HIGHLIGHTS</p>
   <h2 class="section-title ach-title">ACHIEVEMENTS</h2>
   <div class="ach-grid">
-    <div class="ach-card ach-card--dsa">
+    <div class="ach-card ach-card--dsa" data-aos="fade-up" data-aos-delay="0">
       <div class="ach-icons">
         <span class="ach-icon ach-icon--dark"><img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" width="22" height="22" alt="LeetCode" style="filter: brightness(0) invert(1);"></span>
         <span class="ach-icon ach-icon--dark"><img src="https://codeforces.org/s/0/favicon-32x32.png" width="22" height="22" alt="Codeforces"></span>
@@ -517,7 +530,7 @@
       <div class="ach-title-text">DSA Problems Solved</div>
       <div class="ach-desc">LeetCode, Codeforces, GFG & HackerRank — arrays, trees, graphs, DP</div>
     </div>
-    <div class="ach-card ach-card--projects">
+    <div class="ach-card ach-card--projects" data-aos="fade-up" data-aos-delay="100">
       <div class="ach-icons">
         <span class="ach-icon ach-icon--blue"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="MongoDB"></span>
       </div>
@@ -526,7 +539,7 @@
       <div class="ach-title-text">MERN Projects Built</div>
       <div class="ach-desc">Full-stack apps deployed independently from scratch</div>
     </div>
-    <div class="ach-card ach-card--contests">
+    <div class="ach-card ach-card--contests" data-aos="fade-up" data-aos-delay="200">
       <div class="ach-icons">
         <span class="ach-icon ach-icon--purple"><i class="ti ti-trophy"></i></span>
       </div>
@@ -543,7 +556,7 @@
 <div class="section" id="education">
   <p class="section-tag edu-tag">ACADEMIC BACKGROUND</p>
   <h2 class="section-title edu-title">Education</h2>
-  <div class="edu-card">
+  <div class="edu-card" data-aos="fade-up" data-aos-delay="0">
     <div class="edu-left">
       <div class="edu-icon-wrap">
         <i class="ti ti-school"></i>
@@ -578,15 +591,15 @@
   <h2 class="contact-title">Let's Work Together</h2>
   <p class="contact-desc">Looking for an internship in web development or software engineering. Open to exciting opportunities!</p>
   <div class="contact-links">
-    <a href="mailto:kshitijji001@gmail.com" class="contact-btn contact-btn--email">
+    <a href="mailto:kshitijji001@gmail.com" class="contact-btn contact-btn--email" data-aos="fade-up" data-aos-delay="0">
       <i class="ti ti-mail"></i>
       <span>kshitijji001@gmail.com</span>
     </a>
-    <a href="https://github.com/hanuman-kshitijTiwari" class="contact-btn contact-btn--github">
+    <a href="https://github.com/hanuman-kshitijTiwari" class="contact-btn contact-btn--github" data-aos="fade-up" data-aos-delay="100">
       <i class="ti ti-brand-github"></i>
       <span>GitHub</span>
     </a>
-    <a href="https://linkedin.com/in/kshitijtiwari1" class="contact-btn contact-btn--linkedin">
+    <a href="https://linkedin.com/in/kshitijtiwari1" class="contact-btn contact-btn--linkedin" data-aos="fade-up" data-aos-delay="200">
       <i class="ti ti-brand-linkedin"></i>
       <span>LinkedIn</span>
     </a>
@@ -594,7 +607,10 @@
 </div>
 
 <footer>© 2026 Kshitij Tiwari &nbsp;·&nbsp; Built with HTML, CSS & Passion</footer>
+<a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
 
 <script src="script.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration: 700, easing: 'ease-out-cubic', once: true, offset: 80 });</script>
 </body>
 </html>
